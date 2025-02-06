@@ -15,8 +15,10 @@ socials:
     icon_class: fa-facebook-f
   - name: Instagram
     link: https://instagram.com
-  - name: Dribble
-    link: https://dribble.com
+  - name: Dribbble
+    link: https://dribbble.com
   - name: GitHub
     link: https://github.com
+
+copyright: '&copy; 2025. All rights reserved.'
 
