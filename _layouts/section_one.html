@@ -8,53 +8,28 @@
   </header>
   {% endif %}
   <div class="content dark style1 featured">
-    {% assign content_split = page.content | split: "---" %}
-    <div>{{ content_split[0] | strip_html }}</div>
+    {% assign content_split = page.content | markdown_split %}
     <div class="container">
       <div class="row">
-        {% for column in (1..3) %}
+        {% for i in (0..2) %}
         <div class="col-4 col-12-narrow">
           <section>
-            <span class="feature-icon"><span class="icon {% if page.icon_one
-              %}{{ page.icon_one }}{% else %}fa-clock{% endif %}"></span></span>
+            <span class="feature-icon"><span class="icon {% if page.icons[i]
+              %}{{ page.icons[i].icon }}{% else %}fa-clock{% endif %}"></span></span>
             <header>
-              <h3>{{ page.title_one }}</h3>
+              <h3>{{ page.icons[i].title }}</h3>
             </header>
-            <div>{{ content }}</div>
+            <div>{{ content_split[i] | markdownify }}</div>
           </section>
         </div>
         {% endfor %}
-        <!--
-        <div class="col-4 col-12-narrow">
-          <section>
-            <span class="feature-icon"><span class="icon solid fa-bolt"></span></span>
-            <header>
-              <h3>Vivamus</h3>
-            </header>
-            <p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-            Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-            ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-            accumsan vivamus.</p>
-          </section>
-        </div>
-        <div class="col-4 col-12-narrow">
-          <section>
-            <span class="feature-icon"><span class="icon solid fa-cloud"></span></span>
-            <header>
-              <h3>Accumsan</h3>
-            </header>
-            <p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-            Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-            ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-            accumsan vivamus.</p>
-          </section>
-        </div>
--->
+        {% if page.cta %}
         <div class="col-12">
           <footer>
-            <a href="#second" class="button scrolly">Gravida tempor lacinia</a>
+            <a href="#{{ cta.link }}" class="button scrolly">{{ cta.text }}</a>
           </footer>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

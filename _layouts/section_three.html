@@ -1,10 +1,12 @@
 <section id="third" class="main">
+  {% if page.header %}
   <header>
     <div class="container">
       <h2>{{ page.header.title }}</h2>
       <p>{{ page.header.body }}</p>
     </div>
   </header>
+  {% endif %}
   <div class="content dark style3">
     <div class="container">
       <span class="image featured"><img src="images/pic07.jpg" alt="" /></span>
@@ -12,6 +14,7 @@
         {% assign content_body = page.content | split: " " %}
         {% assign length = content_body | size %}
         {% assign part_length = length | divided_by: 3 %}
+        {% assign part_length_double = part_length | times: 2 %}
         <div class="col-4 col-12-narrow">
           {{ content_body | slice: 0, part_length | join: " " | markdownify }}
         </div>
@@ -19,10 +22,12 @@
           {{ content_body | slice: part_length, part_length | join: " " | markdownify }}
         </div>
         <div class="col-4 col-12-narrow">
-          {{ content_body | slice: part_length * 2, part_length | join: " " | markdownify }}
+          {{ content_body | slice: part_length_double, part_length | join: " " | markdownify }}
+          {% if page.cta %}
           <footer>
             <a href="{{ page.cta.link }}" class="button scrolly">{{ page.cta.text }}</a>
           </footer>
+          {% endif %}
         </div>
       </div>
     </div>
