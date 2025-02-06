@@ -14,11 +14,13 @@
         {% for i in (0..2) %}
         <div class="col-4 col-12-narrow">
           <section>
-            <span class="feature-icon"><span class="icon {% if page.icons[i]
+            <span class="feature-icon"><span class="icon solid {% if page.icons[i]
               %}{{ page.icons[i].icon }}{% else %}fa-clock{% endif %}"></span></span>
+            {% if page.icons[i].title %}
             <header>
               <h3>{{ page.icons[i].title }}</h3>
             </header>
+            {% endif %}
             <div>{{ content_split[i] | markdownify }}</div>
           </section>
         </div>

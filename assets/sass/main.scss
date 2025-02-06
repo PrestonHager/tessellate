@@ -325,6 +325,11 @@
 	section,
 	article {
 		margin-bottom: 3em;
+
+    ul, ol, dl {
+      text-align: start;
+      display: inline-block;
+    }
 	}
 
 	section > :last-child,
@@ -924,7 +929,7 @@
 
 		&.brands {
 			&:before {
-				font-family: 'Font Awesome 5 Brands';
+				font-family: 'Font Awesome 6 Brands';
 			}
 		}
 	}

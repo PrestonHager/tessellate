@@ -5,21 +5,26 @@ header:
     color: "blue"
     subtitle: A body might go here to explain the section
 icons:
-    - icon: fa-solid fa-rocket
-      title: Rocket
-    - icon: fa-solid fa-car
+    - icon: fa-solid fa-feather
+      title: Feather
+    - icon: fa-solid fa-ghost
       title: Car
     - icon: fa-solid fa-bicycle
-      title: Bicycle
 ---
 
 Content here in the end!
 
 -----
 
-Another section in markdown
+Another section in markdown. Which can include lists!
+
+ + Item 1
+ + Item 2
+ + Item 3
 
 -----
 
-Final content.
+**Final Content**
+
+And can also include headers
 

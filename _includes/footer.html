@@ -6,12 +6,7 @@
     <li>
       <a
         href="{{ social.link }}"
-        class="icon brands
-          {% if social.icon %}{% elsif social.icon_class %}
-          {{ social.icon_class }}
-          {% else %}
-          fa-{{ social.name | downcase }}
-          {% endif %}"
+        class="icon brands fa-brands {% if social.icon %}{% elsif social.icon_class %}{{ social.icon_class }}{% else %}fa-{{ social.name | downcase }}{% endif %}"
         {% if social.icon %}
         style="background-image: url({{ social.icon }})"
         {% endif %}
