@@ -5,11 +5,11 @@ header:
     color: "blue"
     subtitle: A body might go here to explain the section
 icons:
-    - icon: fa-solid fa-feather
+    - icon: fa-feather
       title: Feather
-    - icon: fa-solid fa-ghost
+    - icon: fa-ghost
       title: Car
-    - icon: fa-solid fa-bicycle
+    - icon: fa-bicycle
 ---
 
 Content here in the end!
