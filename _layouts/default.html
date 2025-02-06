@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>{{ title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+    {% include header.html
+      header_title="Welcome to Tessellate"
+      header_subtitle="A free responsive site template"
+      cta_link="#first"
+      cta_text="Proceed to first phase"
+      background="#000"
+    %}
+		<!-- First -->
+    {% include section_one.html
+      section_title="Tessellate is a free responsive site template"
+      section_body="body"
+      icon_one="fa-clock"
+      title_one="Gravida"
+      body_one="body"
+      cta_link="#second"
+      cta_text="Scroll down"
+    %}
+    <!-- Second -->
+    {% include section_two.html
+      section_title="Euismod sed feugiat lorem tempus magna"
+      section_body="body"
+      sidebar_title="Augue vivamus sed ipsum commodo lorem dolor"
+      sidebar_body="body"
+      cta_link="#third"
+      cta_text="Accumsan nisi tempor"
+    %}
+		<!-- Third -->
+    {% include section_three.html
+      section_title="Ornare varius lorem ipsum ante lectus"
+      section_body="body"
+      content_title="Diam vivamus turpis lorem sodales lectus ornare"
+      content_body="Gravida dis placerat lectus ante vel nunc euismod est turpis
+        sodales. Diam tempor dui lacinia eget ornare varius gravida. Gravida dis
+        placerat lectus ante vel nunc euismod est turpis sodales. Diam tempor dui
+        lacinia accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius
+        gravida euismod. Gravida dis lorem ipsum dolor placerat magna tempus
+        feugiat. Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui
+        lacinia accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius
+        gravida dolore euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu
+        eget ornare varius gravida dolore euismod lorem ipsum dolor sit amet
+        consequat. vivamus nisi eu eget ornare et magna."
+      cta_link="#fourth"
+      cta_text="Ipsum ornare lorem dolor"
+    %}
+		<!-- Fourth -->
+    {% include contact_form.html
+      section_title="Title"
+      section_body="body"
+    %}
+		<!-- Footer -->
+    {% include footer.html
+      form_id="0form_id"
+    %}
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
+

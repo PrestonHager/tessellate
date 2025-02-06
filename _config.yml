@@ -1,0 +1,22 @@
+# This config file loads the defaults for this theme.
+# You may override any of these values in your own config file.
+
+# Site Socials appear in the footer of the site
+# Overwrite the entire default by adding the `socials` key to your config file
+# Each social should have a `name` and `link` attribute, then the default icon
+# will be pulled from Font Awesome. You may override the icon with the `icon`
+# attribute with an image URL, or the `icon_class` attribute with a Font Awesome
+# class name.
+socials:
+  - name: Twitter
+    link: https://twitter.com
+  - name: Facebook
+    link: https://facebook.com
+    icon_class: fa-facebook-f
+  - name: Instagram
+    link: https://instagram.com
+  - name: Dribble
+    link: https://dribble.com
+  - name: GitHub
+    link: https://github.com
+

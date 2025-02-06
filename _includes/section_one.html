@@ -1,0 +1,77 @@
+<!-- First section
+section_title: str
+section_body: str
+icon_one: font-awesome icon name
+title_one: str
+body_one: str
+... for two and three
+-->
+<section id="first" class="main">
+  {% if include.header %}
+  <header>
+    <div class="container">
+      <h2
+        {% if include.header.color %}
+        style="color: {{ include.header.color }}"
+        {% endif %}
+      >{{ include.header.title }}</h2>
+      <p
+        {% if include.header.color %}
+        style="color: {{ include.header.color }}"
+        {% endif %}
+      >{{ include.header.subtitle }}</p>
+    </div>
+  </header>
+  {% endif %}
+  <p>{{ page }}</p>
+  <div class="content dark style1 featured">
+    <div class="container">
+      <div class="row">
+        {% for column in (1..3) %}
+        <div class="col-4 col-12-narrow">
+          <section>
+            <span class="feature-icon"><span class="icon {% if include.icon_one
+              %}{{ include.icon_one }}{% else %}fa-clock{% endif %}"></span></span>
+            <header>
+              <h3>{{ include.title_one }}</h3>
+            </header>
+            <p>{{ include.body_one }}</p>
+          </section>
+        </div>
+        {% endfor %}
+        <!--
+        <div class="col-4 col-12-narrow">
+          <section>
+            <span class="feature-icon"><span class="icon solid fa-bolt"></span></span>
+            <header>
+              <h3>Vivamus</h3>
+            </header>
+            <p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+            Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+            ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+            accumsan vivamus.</p>
+          </section>
+        </div>
+        <div class="col-4 col-12-narrow">
+          <section>
+            <span class="feature-icon"><span class="icon solid fa-cloud"></span></span>
+            <header>
+              <h3>Accumsan</h3>
+            </header>
+            <p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+            Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+            ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+            accumsan vivamus.</p>
+          </section>
+        </div>
+-->
+        <div class="col-12">
+          <footer>
+            <a href="#second" class="button scrolly">Gravida tempor lacinia</a>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

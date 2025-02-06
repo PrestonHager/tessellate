@@ -1,0 +1,37 @@
+<!-- Section three
+-->
+<section id="third" class="main">
+  <header>
+    <div class="container">
+      <h2>{{ include.section_title }}</h2>
+      <p>{{ include.section_body }}</p>
+    </div>
+  </header>
+  <div class="content dark style3">
+    <div class="container">
+      <span class="image featured"><img src="images/pic07.jpg" alt="" /></span>
+      <div class="row">
+        {% comment %}
+        split the body into three for the three sections
+        {% endcomment %}
+        {% assign content_body = include.content_body | split: " " %}
+        {% assign length = content_body | size %}
+        {% assign part_length = length | divided_by: 3 %}
+        <div class="col-4 col-12-narrow">
+          <h3>{{ include.content_title }}</h3>
+          <p>{{ content_body | slice: 0, part_length | join: " " }}</p>
+        </div>
+        <div class="col-4 col-12-narrow">
+          <p>{{ content_body | slice: part_length, part_length | join: " " }}</p>
+        </div>
+        <div class="col-4 col-12-narrow">
+          <p>{{ content_body | slice: part_length * 2, part_length | join: " " }}</p>
+          <footer>
+            <a href="{{ include.cta_link }}" class="button scrolly">{{ include.cta_text }}</a>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

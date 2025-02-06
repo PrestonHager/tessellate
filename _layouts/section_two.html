@@ -1,0 +1,42 @@
+<section id="second" class="main">
+  <header>
+    <div class="container">
+      <h2>{{ page.header.title }}</h2>
+      <p>{{ page.header.subtitle }}</p>
+    </div>
+  </header>
+  <div class="content dark style2">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 col-12-narrow">
+          <section>
+            {{ content }}
+            {% if page.cta %}
+            <footer>
+              <a href="{{ page.cta.link }}" class="button scrolly">{{ page.cta.text }}</a>
+            </footer>
+            {% endif %}
+          </section>
+        </div>
+        <div class="col-8 col-12-narrow">
+          <div class="row">
+            {% for image in page.images %}
+            <div class="col-6">
+              <a href="{{ image.link }}" class="image fit">
+                <img
+                  src="{{ image.url }}"
+                  alt="{{ image.alt }}"
+                />
+                {% if image.caption %}
+                <span class="image-caption">{{ image.caption }}</span>
+                {% endif %}
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

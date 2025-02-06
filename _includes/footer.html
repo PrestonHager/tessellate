@@ -1,0 +1,36 @@
+<!-- Footer section
+-->
+<section id="footer">
+  <ul class="icons">
+    {% for social in site.socials %}
+    <li>
+      <a
+        href="{{ social.link }}"
+        class="icon brands
+          {% if social.icon %}{% else if social.icon_class %}
+          {{ social.icon_class }}
+          {% else %}
+          fa-{{ social.name }}
+          {% endif %}"
+        {% if social.icon %}
+        style="background-image: url({{ social.icon }})"
+        {% endif %}
+      >
+        <span class="label">{{ social.name }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <div class="copyright">
+    <ul class="menu">
+      {% if site.copyright %}
+      {% assign copyright = site.copyright %}
+      {% else %}
+      {% assign copyright = site.time | date: "%Y" | prepend: "Untitled " %}
+      {% endif %}
+      <li>&copy; {{ copyright }}. </li>
+      <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </div>
+</section>
+

@@ -1,0 +1,42 @@
+<!-- Contact form
+Check out formspree for an easy way to get forms!
+Setup a new form and then include the contact form with the form_id!
+
+{% comment %}
+
+{% include contact_form.html form_id="yourFormIDHere" %}
+
+{% endcomment %}
+-->
+<section id="fourth" class="main">
+  <header>
+    <div class="container">
+      <h2>{{ include.section_title }}</h2>
+      <p>{{ include.section_body }}</p>
+    </div>
+  </header>
+  <div class="content style4 featured">
+    <div class="container medium">
+      <form method="post" action="https://formspree.io/f/{{ include.form_id }}">
+        <div class="row gtr-50">
+          <div class="col-6 col-12-mobile">
+            <input type="text" placeholder="Name" name="name" />
+          </div>
+          <div class="col-6 col-12-mobile">
+            <input type="text" placeholder="Email" name="email" />
+          </div>
+          <div class="col-12">
+            <textarea name="message" placeholder="Message"></textarea>
+          </div>
+          <div class="col-12">
+            <ul class="actions special">
+              <li><input type="submit" class="button" value="Send Message" /></li>
+              <li><input type="reset" class="button alt" value="Clear Form" /></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+

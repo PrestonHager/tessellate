@@ -1,0 +1,40 @@
+<!-- Header include for image and CTA
+header:
+  title: Title Goes Here
+  subtitle: A short sentence for a subtitle
+cta:
+  link: #first
+  text: Proceed to #first element
+-->
+<section id="header" class="dark"
+  {% if include.header.background_image %}
+  style="background-image:{{ include.header.background_image }};"
+  {% else if include.header.background %}
+  style="background:{{ include.header.background }};"
+  {% endif %}
+>
+  <header>
+    <h1
+      {% if include.header.color %}
+      style="color: {{ include.header.color }}"
+      {% endif %}
+    >{{ include.header.title }}</h1>
+    <p
+      {% if include.header.color %}
+      style="color: {{ include.header.color }}"
+      {% endif %}
+    >{{ include.header.subtitle }}</p>
+  </header>
+  {% if include.cta %}
+  <footer>
+    <a
+      href="{{ include.cta.link }}"
+      class="button scrolly"
+      {% if include.header.color %}
+      style="color: {{ include.header.color }}; border: 1px solid {{ include.header.color }}"
+      {% endif %}
+    >{{ include.cta.text }}</a>
+  </footer>
+  {% endif %}
+</section>
+
