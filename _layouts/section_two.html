@@ -27,8 +27,12 @@
         </div>
         <div class="col-8 col-12-narrow">
           <div class="row">
+            {% assign column_width = 12 %}
+            {% if page.images.size > 2 %}
+            {% assign column_width = 6 %}
+            {% endif %}
             {% for image in page.images %}
-            <div class="col-6">
+            <div class="col-{{ column_width }}">
               <a href="{{ image.link }}" class="image fit">
                 <img
                   src="{{ image.url }}"
