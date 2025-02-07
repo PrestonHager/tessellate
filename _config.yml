@@ -12,7 +12,7 @@ socials:
     link: https://twitter.com
   - name: Facebook
     link: https://facebook.com
-    icon_class: fa-facebook-f
+    icon_class: brands fa-brands fa-facebook-f
   - name: Instagram
     link: https://instagram.com
   - name: Dribbble
