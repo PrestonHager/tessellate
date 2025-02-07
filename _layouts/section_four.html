@@ -1,0 +1,40 @@
+{% if page.section-id %}
+{% assign section-id = page.section-id %}
+{% else %}
+{% assign section-id = page.title %}
+{% endif %}
+<section id="{{ section-id }}" class="main">
+  {% if page.header %}
+  <header>
+    <div class="container">
+      <h2>{{ page.header.title }}</h2>
+      <p>{{ page.header.body }}</p>
+    </div>
+  </header>
+  {% endif %}
+  <div class="content dark style3">
+    <div class="container">
+      {% if page.image %}
+      <span class="image featured"><img src="{{ page.image }}" alt="" /></span>
+      {% endif %}
+      <div class="row">
+        {% assign column_width = 4 %}
+        {% if page.columns %}
+        {% assign column_width = 12 | divided_by: page.columns %}
+        {% endif %}
+        {% assign content_split = page.content | markdown_split %}
+        {% for body in content_split %}
+        <div class="col-{{ column_width }} col-12-narrow">
+          {{ body | markdownify }}
+        </div>
+        {% endfor %}
+      </div>
+      {% if page.cta %}
+      <footer>
+        <a href="{{ page.cta.link }}" class="button scrolly">{{ page.cta.text }}</a>
+      </footer>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
