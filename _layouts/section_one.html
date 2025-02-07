@@ -1,4 +1,9 @@
-<section id="first" class="main">
+{% if page.section-id %}
+{% assign section-id = page.section-id %}
+{% else %}
+{% assign section-id = page.title %}
+{% endif %}
+<section id="{{ section-id }}" class="main">
   {% if page.header %}
   <header>
     <div class="container">
