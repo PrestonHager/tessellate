@@ -1,0 +1,43 @@
+<div class="row navbar">
+  {% assign navigation_left = site.data.navigation | where: "side", "left" %}
+  {% assign navigation_right = site.data.navigation | where: "side", "right" %}
+  {% for item in navigation_left %}
+    <div class="nav-item col-md-2">
+      <a href="{{ item.url }}" class="btn btn-primary btn-block">{{ item.title }}</a>
+      {% if item.dropdown %}
+      <ul class="dropdown">
+        {% for dropdown_item in item.dropdown %}
+          <li>
+            <a
+              href="{{ dropdown_item.url }}"
+              class="btn btn-primary btn-block"
+            >{{ dropdown_item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+  {% for item in navigation_right %}
+    {% if forloop.first %}
+    <div class="nav-item col-md-2" style="margin-left: auto;">
+    {% else %}
+    <div class="nav-item col-md-2">
+    {% endif %}
+      <a href="{{ item.url }}" class="btn btn-primary btn-block">{{ item.title }}</a>
+      {% if item.dropdown %}
+      <ul class="dropdown col-md-2">
+        {% for dropdown_item in item.dropdown %}
+          <li>
+            <a
+              href="{{ dropdown_item.url }}"
+              class="btn btn-primary btn-block"
+            >{{ dropdown_item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
