@@ -17,10 +17,12 @@
     {% include navigation.html %}
     {% endif %}
 		<!-- Header -->
+    {% if page.header %}
     {% include header.html
       header=page.header
       cta=page.cta
     %}
+    {% endif %}
     <div class="content">
       {{ content }}
     </div>
