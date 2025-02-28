@@ -12,6 +12,8 @@ pkgs.mkShell {
     echo "Jekyll development environment ready!"
     echo "Ruby version: $(ruby --version)"
     echo "Bundler version: $(bundler --version)"
+
+    exec nu
   '';
 }
 
