@@ -34,6 +34,20 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
+    {% if page.extra-scripts %}
+    <!-- Extra (per-page) Scripts -->
+    {% endif %}
+    {% for script in page.extra-scripts %}
+      {% if script.url %}
+        {% if script.integrity %}
+          <script src="{{ script.url }}" integrity="{{ script.integrity }}" crossorigin="anonymous"></script>
+        {% else %}
+          <script src="{{ script.url }}"></script>
+        {% endif %}
+      {% else %}
+        <script>{{ script }}</script>
+      {% endif %}
+    {% endfor %}
 	</body>
 </html>
 
