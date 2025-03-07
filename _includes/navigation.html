@@ -20,9 +20,9 @@
   {% endfor %}
   {% for item in navigation_right %}
     {% if forloop.first %}
-    <div class="nav-item" style="margin-left: auto;">
+    <div class="nav-item nav-item-right" style="margin-left: auto;">
     {% else %}
-    <div class="nav-item">
+    <div class="nav-item nav-item-right">
     {% endif %}
       <a href="{{ item.url }}" class="btn btn-primary btn-block">{{ item.title }}</a>
       {% if item.dropdown %}

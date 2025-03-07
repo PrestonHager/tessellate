@@ -98,6 +98,7 @@
   margin: 0;
 }
 .navbar {
+  font-size: 0.75em;
   margin: 0;
   overflow: visible;
   position: fixed;
@@ -108,7 +109,7 @@
 
   .nav-item {
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 0.35em 0.75em;
     text-align: center;
     text-transform: uppercase;
     background: #f9f9f9;
@@ -144,6 +145,10 @@
     &:hover ul.dropdown {
       visibility: visible;
     }
+  }
+
+  .nav-item.nav-item-right {
+    margin-right: 1em;
   }
 }
 
