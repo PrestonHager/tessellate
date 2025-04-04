@@ -8,7 +8,7 @@
   <header>
     <div class="container">
       <h2>{{ page.header.title }}</h2>
-      <p>{{ page.header.subtitle }}</p>
+      <p>{{ page.header.body }}</p>
     </div>
   </header>
   {% endif %}
@@ -33,7 +33,7 @@
             {% endif %}
             {% for image in page.images %}
             <div class="col-{{ column_width }}">
-              <a href="{{ image.link }}" class="image fit">
+              <a href="{{ image.link }}" class="image fit scrolly">
                 <img
                   src="{{ image.url }}"
                   alt="{{ image.alt }}"

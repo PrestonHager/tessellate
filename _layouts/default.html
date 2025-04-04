@@ -12,11 +12,11 @@
     </div>
   </header>
   {% endif %}
-  {% assign style = style4 %}
+  {% assign style = style1 %}
   {% if page.style %}
   {% assign style = page.style %}
   {% endif %}
-  <div class="content dark {{ style }} featured">
+  <div class="content dark {{ style }} featured default">
     <div class="container">
       {{ content }}
     </div>
