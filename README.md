@@ -1,7 +1,24 @@
 # tessellate
 
+<p align="center">
+    <a href="https://github.com/PrestonHager/tessellate/actions/workflows/gem-push.yml">
+        <img
+            src="https://github.com/PrestonHager/tessellate/actions/workflows/gem-push.yml/badge.svg"
+            alt="Ruby Gem" />
+    </a>
+    <a href="https://rubygems.org/gems/tessellate">
+        <img src="http://img.shields.io/gem/v/tessellate.svg?style=flat-square"
+            alt="Gem Version" />
+    </a>
+</p>
+
 Tessellate theme based on [HTML5 UP's Tessellate template][0].
 Aimed at sectioned content allowing for a wide range of layouts.
+This theme is great for use with a one-page site or a multi-page site.
+
+## Preview
+
+![Preview](_showcase/preview.png)
 
 ## Installation
 
@@ -27,9 +44,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
-
-The basic layout is `page`, it takes a `header` and `cta` parameter.
+The basic layout is `page`, it takes a `header` and `cta` parameter in the
+frontmatter.
 
 ```yaml
 ---
@@ -82,9 +98,6 @@ Front matter goes here...
 ```
 
 ## Customization
-
-TODO: Write customization instructions here. Describe any available variables,
-layout options, and/or custom URL options.
 
 You may change the syntax highlighting theme by overwriting the `syntax.css`
 file in the `assets/css` directory. Either find a rouge theme online, or use
