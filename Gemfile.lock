@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tessellate (0.1.6)
+    tessellate (0.1.9)
       jekyll (~> 4.3)
 
 GEM
@@ -80,6 +80,9 @@ PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
+  jekyll (~> 4.4, >= 4.4.1)
+  kramdown (~> 2.5, >= 2.5.1)
+  rouge (~> 4.5, >= 4.5.1)
   tessellate!
 
 BUNDLED WITH

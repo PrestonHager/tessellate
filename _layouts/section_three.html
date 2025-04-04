@@ -18,6 +18,14 @@
       <span class="image featured"><img src="{{ page.image }}" alt="" /></span>
       {% endif %}
       <div class="row">
+        {% assign content_paragraphs = page.content | paragraph_split: 3 %}
+        {% for paragraph in content_paragraphs %}
+        <div class="col-4 col-12-narrow">
+          {{ paragraph | markdownify }}
+        </div>
+        {% endfor %}
+
+        {% comment %}
         {% assign content_body = page.content | split: " " %}
         {% assign length = content_body | size %}
         {% assign part_length = length | divided_by: 3 %}
@@ -30,12 +38,13 @@
         </div>
         <div class="col-4 col-12-narrow">
           {{ content_body | slice: part_length_double, part_length | join: " " | markdownify }}
-          {% if page.cta %}
-          <footer>
-            <a href="{{ page.cta.link }}" class="button scrolly">{{ page.cta.text }}</a>
-          </footer>
-          {% endif %}
         </div>
+        {% endcomment %}
+        {% if page.cta %}
+        <footer>
+          <a href="{{ page.cta.link }}" class="button scrolly">{{ page.cta.text }}</a>
+        </footer>
+        {% endif %}
       </div>
     </div>
   </div>

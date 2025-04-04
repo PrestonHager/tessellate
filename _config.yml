@@ -22,3 +22,11 @@ socials:
 
 copyright: '&copy; 2025. All rights reserved.'
 
+
+# These attributes are required for theme highlighting, only overwrite if you
+# know what you're doing.
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+

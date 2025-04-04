@@ -86,6 +86,16 @@ Front matter goes here...
 TODO: Write customization instructions here. Describe any available variables,
 layout options, and/or custom URL options.
 
+You may change the syntax highlighting theme by overwriting the `syntax.css`
+file in the `assets/css` directory. Either find a rouge theme online, or use
+`rougify` to generate the css from a sublime theme file. The default theme is
+`monokai`. Two command you may find useful are:
+
+```sh
+$ bundle exec rougify help style
+$ bundle exec rougify style monokai > assets/css/syntax.css
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
