@@ -22,7 +22,8 @@
         {% if page.columns %}
         {% assign column_width = 12 | divided_by: page.columns %}
         {% endif %}
-        {% assign content_split = page.content | markdown_split %}
+        {% assign columns = page.columns | default: 3 %}
+        {% assign content_split = page.content | paragraph_split: columns %}
         {% for body in content_split %}
         <div class="col-{{ column_width }} col-12-narrow">
           {{ body | markdownify }}

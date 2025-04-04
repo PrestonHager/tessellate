@@ -3,7 +3,7 @@ layout: page
 permalink: /project/
 header:
     background: |
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
         center center/cover no-repeat url(/assets/images/IMG_0010.jpg)
     title: Tessellate
     subtitle: A Jekyll Theme

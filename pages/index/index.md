@@ -9,7 +9,7 @@ header:
     subtitle: A Jekyll Theme
     color: "#fff"
 cta:
-    link: "#about"
+    link: /project/
     text: "Learn More"
 ---
 

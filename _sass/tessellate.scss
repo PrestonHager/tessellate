@@ -47,6 +47,7 @@
 	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section {
 		display: block;
+    width: 100%;
 	}
 
 	body {
@@ -317,7 +318,7 @@
 		clear: both;
 	}
 
-	.featured {
+	.featured:not(.default) {
 		text-align: center;
 
 		p {
@@ -1281,8 +1282,8 @@
 		/* Button */
 
 			.button {
-				padding-left: 0;
-				padding-right: 0;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
 				width: 100%;
 				max-width: 24em;
 			}
@@ -1344,5 +1345,7 @@
   pre.highlight {
     padding: 0.25em 0.5em 0.25em 0.5em;
     overflow-x: scroll;
+    margin-bottom: 1em;
+    overflow: auto;
   }
 

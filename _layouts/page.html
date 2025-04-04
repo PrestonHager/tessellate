@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/syntax.css" />
 	</head>
-	<body class="is-preload">
+	<body
+    class="is-preload"
+    {% if page.section-id %} id="{{ page.section-id }}"{% endif %}
+    {% if page.class %} class="{{ page.class }}"{% endif %}
+  >
     {% if site.data.navigation %}
     {% include navigation.html %}
     {% endif %}
