@@ -18,7 +18,12 @@ This theme is great for use with a one-page site or a multi-page site.
 
 ## Preview
 
+<details>
+  <summary>See screenshot (very long image).</summary>
+
 ![Preview](_showcase/preview.png)
+
+</details>
 
 ## Installation
 
