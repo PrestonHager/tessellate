@@ -10,7 +10,6 @@ module Jekyll
       subview = find_subview_document(site)
 
       return "" unless validate_subview(subview, site)
-      Jekyll.logger.info "Subview:", "Found subview document #{@path}"
 
       render_subview(subview, site, context)
     rescue => e
@@ -22,26 +21,25 @@ module Jekyll
     private
 
     def find_subview_document(site)
-      # Search the path, the relative path, and the basename
+      # Match by path, relative path, or basename
       site.pages.find { |p|
-        if p.path == @path || p.relative_path == @path || File.basename(p.path) == @path
-          @path = p.path
-          return p
-        end
+        p.path == @path || p.relative_path == @path || File.basename(p.path) == @path
       }
     end
 
     def validate_subview(subview, site)
       return true if subview
       Jekyll.logger.error "Subview Error:", "Document #{@path} not found"
+      Jekyll.logger.error "\n#{e.backtrace.join("\n")}"
       false
     end
 
     def render_subview(subview, site, parent_context)
-      Jekyll.logger.info "Subview:", "Rendering subview document #{@path} inside #{parent_context.registers[:page]["path"]}"
-      # Also set the subview in the data to true
-      subview.data["subview"] = true
-      subview.renderer.run()
+      Jekyll.logger.debug "Subview:",
+        "Rendering subview document #{@path} inside #{parent_context.registers[:page]['path']}"
+      # Render the subview's content and return the output
+      subview.output = Jekyll::Renderer.new(site, subview, site.site_payload).run()
+      subview.output
     end
   end
 end
