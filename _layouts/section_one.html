@@ -12,10 +12,9 @@
     </div>
   </header>
   {% endif %}
+  {% assign style = style1 %}
   {% if page.style %}
   {% assign style = page.style %}
-  {% else %}
-  {% assign style = style1 %}
   {% endif %}
   <div class="content dark {{ style }}">
     {% assign content_split = page.content | markdown_split %}

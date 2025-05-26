@@ -12,10 +12,9 @@
     </div>
   </header>
   {% endif %}
+  {% assign style = style3 %}
   {% if page.style %}
   {% assign style = page.style %}
-  {% else %}
-  {% assign style = style3 %}
   {% endif %}
   <div class="content dark {{ style }}">
     <div class="container">
