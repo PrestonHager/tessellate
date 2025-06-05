@@ -16,7 +16,7 @@
   {% if page.style %}
   {% assign style = page.style %}
   {% endif %}
-  <div class="content dark {{ style }}">
+  <div class="content dark {{ style }} featured">
     {% assign content_split = page.content | markdown_split %}
     <div class="container">
       <div class="row">
