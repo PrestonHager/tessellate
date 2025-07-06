@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "tessellate"
-  spec.version       = "0.1.14"
+  spec.version       = "0.1.15"
   spec.authors       = ["Preston Hager"]
   spec.email         = ["preston@hagerfamily.com"]
 
