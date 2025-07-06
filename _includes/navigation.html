@@ -1,3 +1,4 @@
+{% comment %}
 <div class="row navbar">
   {% assign navigation_left = site.data.navigation | where: "side", "left" %}
   {% assign navigation_right = site.data.navigation | where: "side", "right" %}
@@ -40,4 +41,68 @@
     </div>
   {% endfor %}
 </div>
+{% endcomment %}
+
+<!-- Jekyll Navigation Implementation -->
+<nav class="navbar">
+<!--
+  <a href="#" class="logo"><i class="fas fa-cube"></i> JekyllSite</a>
+-->
+  
+  <button class="mobile-toggle" id="mobileToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <div class="nav-items" id="navItems">
+    <!-- Left navigation items -->
+    <div class="nav-left">
+      {% assign navigation_left = site.data.navigation | where: "side", "left" %}
+      {% for item in navigation_left %}
+      <div class="nav-item">
+        <a href="{{ item.url }}" class="btn btn-primary btn-block">
+          <i class="{{ item.icon }}"></i> {{ item.title }}
+        </a>
+        {% if item.dropdown %}
+        <div class="dropdown">
+          {% for dropdown_item in item.dropdown %}
+          <a href="{{ dropdown_item.url }}" class="btn btn-primary btn-block">
+            {% if dropdown_item.icon %}
+            <i class="{{ dropdown_item.icon }}"></i>
+            &nbsp;
+            {% endif %}
+            {{ dropdown_item.title }}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Right navigation items -->
+    <div class="nav-right">
+      {% assign navigation_right = site.data.navigation | where: "side", "right" %}
+      {% for item in navigation_right %}
+      <div class="nav-item {% if forloop.first %}first-right{% endif %}">
+        <a href="{{ item.url }}" class="btn btn-primary btn-block">
+          <i class="{{ item.icon }}"></i> {{ item.title }}
+        </a>
+        {% if item.dropdown %}
+        <div class="dropdown">
+          {% for dropdown_item in item.dropdown %}
+          <a href="{{ dropdown_item.url }}" class="btn btn-primary btn-block">
+            {% if dropdown_item.icon %}
+            <i class="{{ dropdown_item.icon }}"></i>
+            &nbsp;
+            {% endif %}
+            {{ dropdown_item.title }}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
 
