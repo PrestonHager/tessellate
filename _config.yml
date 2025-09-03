@@ -22,6 +22,8 @@ socials:
 
 copyright: '&copy; 2025. All rights reserved.'
 
+ga: G-XXXXXXXXXX # Your Google Analytics tracking ID
+
 
 # These attributes are required for theme highlighting, only overwrite if you
 # know what you're doing.
