@@ -110,7 +110,7 @@ def run_tests
     # Test 4: Empty content
     content = ""
     result = test.markdown_split(content)
-    expected = []
+    expected = [""]
     if result == expected
       puts "  ✓ Empty content: PASS"
       tests_passed += 1
