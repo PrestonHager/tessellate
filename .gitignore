@@ -9,3 +9,6 @@ vendor/
 # Gem files
 tessellate-*.gem
 
+# Test artifacts
+spec/examples.txt
+test_plugins.rb
