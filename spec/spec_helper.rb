@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'jekyll'
+require 'liquid'
 
 # Setup test environment
 RSpec.configure do |config|

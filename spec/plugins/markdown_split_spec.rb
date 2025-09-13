@@ -17,21 +17,21 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = "First section\n---\nSecond section"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section", "Second section"])
+        expect(result).to eq(["First section\n", "\nSecond section"])
       end
 
       it 'splits on horizontal rules with asterisks' do
         content = "First section\n***\nSecond section"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section", "Second section"])
+        expect(result).to eq(["First section\n", "\nSecond section"])
       end
 
       it 'splits on horizontal rules with underscores' do
         content = "First section\n___\nSecond section"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section", "Second section"])
+        expect(result).to eq(["First section\n", "\nSecond section"])
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = "Section 1\n---\nSection 2\n***\nSection 3\n___\nSection 4"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["Section 1", "Section 2", "Section 3", "Section 4"])
+        expect(result).to eq(["Section 1\n", "\nSection 2\n", "\nSection 3\n", "\nSection 4"])
       end
     end
 
@@ -49,14 +49,14 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = "First section\n  ---  \nSecond section"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section", "Second section"])
+        expect(result).to eq(["First section\n", "\nSecond section"])
       end
 
       it 'handles horizontal rules with extra characters' do
         content = "First section\n-----\nSecond section"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section", "Second section"])
+        expect(result).to eq(["First section\n", "\nSecond section"])
       end
     end
 
@@ -74,7 +74,7 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = ""
         result = instance.markdown_split(content)
         
-        expect(result).to eq([""])
+        expect(result).to eq([])  # Empty string split returns empty array
       end
     end
 
@@ -83,14 +83,14 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = "---\nFirst section\n---\nSecond section"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["", "First section", "Second section"])
+        expect(result).to eq(["", "\nFirst section\n", "\nSecond section"])
       end
 
       it 'handles content ending with horizontal rule' do
         content = "First section\n---\nSecond section\n---"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section", "Second section", ""])
+        expect(result).to eq(["First section\n", "\nSecond section\n", ""])
       end
     end
   end

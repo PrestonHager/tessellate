@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative '../spec_helper'
-require_relative '../../_plugins/subview'
 
+# We need to set up mock classes before requiring the plugin
 # Mock Liquid and Jekyll classes for testing
 module Liquid
   class Tag
@@ -14,9 +14,12 @@ module Liquid
     end
   end
   
-  module Template
-    def self.register_tag(name, klass)
-      # Mock registration
+  # Don't redefine Template - use the existing one and just mock register_tag
+  class << Template
+    alias_method :original_register_tag, :register_tag if method_defined?(:register_tag)
+    
+    def register_tag(name, klass)
+      # Mock registration for tests
     end
   end
 end
@@ -63,6 +66,8 @@ module Jekyll
     end
   end
 end
+
+require_relative '../../_plugins/subview'
 
 RSpec.describe Jekyll::SubviewTag do
   let(:site) { Jekyll::Site.new }
