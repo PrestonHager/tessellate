@@ -4,7 +4,7 @@
     <a href="https://github.com/PrestonHager/tessellate/actions/workflows/gem-push.yml">
         <img
             src="https://github.com/PrestonHager/tessellate/actions/workflows/gem-push.yml/badge.svg"
-            alt="Ruby Gem" />
+            alt="Release" />
     </a>
     <a href="https://rubygems.org/gems/tessellate">
         <img src="http://img.shields.io/gem/v/tessellate.svg?style=flat-square"
