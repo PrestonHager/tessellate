@@ -12,6 +12,9 @@ module Liquid
       @tag_name = tag_name
       @markup = markup
     end
+    
+    # Ensure new is public method
+    public_class_method :new if private_methods.include?(:new)
   end
   
   # Don't redefine Template - use the existing one and just mock register_tag
@@ -25,6 +28,19 @@ module Liquid
 end
 
 module Jekyll
+  # Mock the logger
+  class << self
+    def logger
+      @logger ||= MockLogger.new
+    end
+  end
+  
+  class MockLogger
+    def error(*args); end
+    def debug(*args); end
+    def info(*args); end
+  end
+  
   class Document
     attr_accessor :path, :relative_path, :output
     

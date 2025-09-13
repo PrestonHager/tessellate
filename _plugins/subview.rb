@@ -30,7 +30,6 @@ module Jekyll
     def validate_subview(subview, site)
       return true if subview
       Jekyll.logger.error "Subview Error:", "Document #{@path} not found"
-      Jekyll.logger.error "\n#{e.backtrace.join("\n")}"
       false
     end
 

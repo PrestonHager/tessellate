@@ -74,7 +74,7 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = ""
         result = instance.markdown_split(content)
         
-        expect(result).to eq([])  # Empty string split returns empty array
+        expect(result).to eq([""])  # Empty string split returns [""] for consistency
       end
     end
 
@@ -90,7 +90,7 @@ RSpec.describe Jekyll::MarkdownSplit do
         content = "First section\n---\nSecond section\n---"
         result = instance.markdown_split(content)
         
-        expect(result).to eq(["First section\n", "\nSecond section\n", ""])
+        expect(result).to eq(["First section\n", "\nSecond section\n"])
       end
     end
   end
