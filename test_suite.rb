@@ -4,10 +4,14 @@
 # Standalone test suite for Tessellate Jekyll Theme
 # This can run without Jekyll or RSpec dependencies
 
+# Configuration constants
+REQUIRED_CONFIG_KEYS = %w[markdown highlighter kramdown socials copyright].freeze
+
 # Define test classes and modules at the top level
 module Jekyll
   module MarkdownSplit
     def markdown_split(content)
+      return [""] if content.empty?
       content.split(/^\s*[-*_]{3,}\s*$/m)
     end
   end
@@ -110,7 +114,7 @@ def run_tests
     # Test 4: Empty content
     content = ""
     result = test.markdown_split(content)
-    expected = []  # Empty string split returns empty array
+    expected = [""]
     if result == expected
       puts "  ✓ Empty content: PASS"
       tests_passed += 1
@@ -265,8 +269,7 @@ def run_tests
       tests_failed += 1
     end
     
-    required_config_keys = %w[markdown highlighter kramdown socials copyright]
-    required_config_keys.each do |key|
+    REQUIRED_CONFIG_KEYS.each do |key|
       if config.key?(key)
         puts "  ✓ Config has '#{key}': PASS"
         tests_passed += 1
