@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tessellate (0.1.10)
+    tessellate (0.1.16)
       jekyll (~> 4.3)
 
 GEM
