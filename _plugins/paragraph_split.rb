@@ -119,15 +119,23 @@ module Jekyll
           columns = Array.new(n) { [] }
           total_blocks = blocks.size
 
-          n.times do |i|
-            start_idx = (i * total_blocks) / n
-            end_idx = ((i + 1) * total_blocks) / n - 1
-            end_idx = [end_idx, total_blocks - 1].min
+          if total_blocks <= n
+            # When we have fewer blocks than columns, distribute starting from first column
+            blocks.each_with_index do |block, i|
+              columns[i] = [block]
+            end
+          else
+            # When we have more blocks than columns, distribute evenly
+            n.times do |i|
+              start_idx = (i * total_blocks) / n
+              end_idx = ((i + 1) * total_blocks) / n - 1
+              end_idx = [end_idx, total_blocks - 1].min
 
-            if start_idx <= end_idx
-              columns[i] = blocks[start_idx..end_idx]
-            else
-              columns[i] = []
+              if start_idx <= end_idx
+                columns[i] = blocks[start_idx..end_idx]
+              else
+                columns[i] = []
+              end
             end
           end
 
