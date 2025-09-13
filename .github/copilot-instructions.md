@@ -8,7 +8,7 @@ Always reference these instructions first and fallback to search or bash command
 
 ### Environment Setup
 - Install bundler first: `gem install bundler --user-install`
-- Add gem bin directory to PATH: `export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"`
+- Add gem bin directory to PATH: `export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"`
 - Configure bundle to use local path: `bundle config set --local path 'vendor/bundle'`
 
 ### Build and Development Workflow
